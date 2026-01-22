@@ -1,0 +1,23 @@
+# build outputs
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# binaries
+test
+timer_tests
+*.o
+*.a
+*.so
+*.d
+*.out
+
+# editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
