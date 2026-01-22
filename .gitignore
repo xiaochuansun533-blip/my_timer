@@ -5,6 +5,8 @@ CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+CTestTestfile.cmake
+Testing/
 
 # binaries
 test
@@ -21,3 +23,4 @@ timer_tests
 
 # OS
 .DS_Store
+Thumbs.db
