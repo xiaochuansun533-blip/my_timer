@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ---
 
@@ -155,3 +156,45 @@
 2) `start()` 增加幂等保护，避免重复 start 覆盖线程句柄。  
 3) `cancel()`：若在 `timers` 中成功删除（一次性任务），可不插入 `canceled_ids`，避免集合增长。  
 4) 用最小堆/优先队列替换 `vector + min_element`，将取最早到期任务降为 O(log n)。  
+=======
+# my_timer
+
+一个**轻量级 C++ 定时任务调度器**（timer scheduler），支持一次性任务与周期任务，内部采用 **one scheduler thread** 的后台线程模型执行回调。
+
+> 定位：学习/工程小工具。当前实现的并发与时间语义请以 `semantics.md` 为准。
+
+---
+
+## 特性
+
+- **一次性定时任务**：`schedule_after(delay, cb)`
+- **周期任务**：`schedule_every(interval, cb)`（当前实现为 *fixed-delay* 风格，详见 `semantics.md`）
+- **取消任务**：`cancel(id)`
+- **单后台线程串行执行回调**：回调不在锁内执行（避免长回调阻塞 API 调用）
+- 计时基准：`std::chrono::steady_clock`
+
+---
+
+## 目录结构（建议包装后保持）
+
+- `timer_scheduler.h`：核心实现（当前仓库为头文件实现）
+- `test.cpp / test.h`：简单测试/示例
+- `CMakeLists.txt` / `Makefile`：构建脚手架
+- `semantics.md`：并发/时间语义说明
+- `LICENSE`：开源许可
+
+---
+
+## 快速开始（WSL2 / Ubuntu）
+
+### 1) 构建（CMake）
+
+```bash
+sudo apt-get update
+sudo apt-get install -y cmake g++ ninja-build
+
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j"$(nproc)"
+
+# 生成物以 build/ 目录为准（如包含测试可执行文件，通常也在 build/ 下）
+>>>>>>> a86c8da (docs: repackage README semantics and license)
