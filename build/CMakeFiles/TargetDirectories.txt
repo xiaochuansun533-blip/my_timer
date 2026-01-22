@@ -1,0 +1,4 @@
+/home/wsl2/code/c++/timer/build/CMakeFiles/timer_tests.dir
+/home/wsl2/code/c++/timer/build/CMakeFiles/test.dir
+/home/wsl2/code/c++/timer/build/CMakeFiles/edit_cache.dir
+/home/wsl2/code/c++/timer/build/CMakeFiles/rebuild_cache.dir
